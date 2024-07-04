@@ -7,6 +7,12 @@ import HomeScreen from '../screens/HomeScreen';
 import Characters from '../screens/Characters';
 import Timeline from '../screens/Timeline';
 import QuoteFinder from '../screens/QuoteFinder';
+import DaysBeforeDays from '../screens/DayBeforeDays';
+import YearsOfTheTree from '../screens/YearsOfTheTree';
+import FirstAge from '../screens/FirstAge';
+import SecondAge from '../screens/SecondAge';
+import ThirdAge from '../screens/ThirdAge';
+import FourthAge from '../screens/FourthAge';
 import Login from '../screens/Login';
 import Signup from '../screens/Signup';
 import SplashScreen from '../screens/SplashScreen';
@@ -33,8 +39,8 @@ function MainTabs() {
 
           return <Image source={iconName} style={{ width: size, height: size, tintColor: color }} />;
         },
-        tabBarActiveTintColor: '#302C2C',  
-        tabBarInactiveTintColor: 'gray',   
+        tabBarActiveTintColor: 'tomato',
+        tabBarInactiveTintColor: 'gray',
       })}
     >
       <Tab.Screen 
@@ -69,6 +75,12 @@ export default function AppNavigator() {
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
         <Stack.Screen name="Signup" component={Signup} options={{ headerShown: false }} />
         <Stack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} />
+        <Stack.Screen name="DaysBeforeDays" component={DaysBeforeDays} options={{ headerShown: false }} />
+        <Stack.Screen name="YearsOfTheTree" component={YearsOfTheTree} options={{ headerShown: false }} />
+        <Stack.Screen name="FirstAge" component={FirstAge} options={{ headerShown: false }} />
+        <Stack.Screen name="SecondAge" component={SecondAge} options={{ headerShown: false }} />
+        <Stack.Screen name="ThirdAge" component={ThirdAge} options={{ headerShown: false }} />
+        <Stack.Screen name="FourthAge" component={FourthAge} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

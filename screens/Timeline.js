@@ -1,147 +1,59 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, ImageBackground, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
 
-const timelineData = [
-  {
-    date: 'SA 1600',
-    location: 'Mount Doom, Mordor',
-    description: 'Sauron crafts the One Ring to rule all the other Rings of Power.',
-  },
-  {
-    date: 'SA 1697',
-    location: 'Rivendell',
-    description: 'Elrond builds Rivendell after the destruction of Eregion in the War of the Elves and Sauron.',
-  },
-  {
-    date: 'SA 2251',
-    location: 'Middle-earth',
-    description: 'The Nazgûl, also known as Ringwraiths, are first sighted.',
-  },
-  {
-    date: 'SA 3209',
-    location: 'Middle-earth',
-    description: 'Isildur, future ring bearer and vanquisher of Sauron, is born.',
-  },
-  {
-    date: 'SA 3441',
-    location: 'Mount Doom, Mordor',
-    description: 'Isildur cuts the One Ring from Sauron\'s hand, ending the Second Age.',
-  },
-  {
-    date: 'TA 2',
-    location: 'Anduin River',
-    description: 'Isildur is killed by Orcs near the Anduin River, and the One Ring is lost.',
-  },
-  {
-    date: 'TA 1000',
-    location: 'Middle-earth',
-    description: 'Five Wizards are sent to Middle-earth to counter Sauron\'s growing threat.',
-  },
-  {
-    date: 'TA 1601',
-    location: 'Eriador',
-    description: 'The Shire is founded by Hobbits.',
-  },
-  {
-    date: 'TA 2941',
-    location: 'Mirkwood and Erebor',
-    description: 'Bilbo Baggins finds the One Ring during the quest to reclaim Erebor from Smaug.',
-  },
-  {
-    date: 'TA 3019',
-    location: 'Mount Doom, Mordor',
-    description: 'Frodo Baggins destroys the One Ring in the fires of Mount Doom, ending Sauron\'s reign.',
-  }
-];
-
-export default function Timeline() {
-  const renderItem = ({ item, index }) => (
-    <View style={styles.eventContainer}>
-      <View style={styles.timeline}>
-        <View style={styles.timelineMarker} />
-        {index < timelineData.length - 1 && <View style={styles.timelineLine} />}
-      </View>
-      <View style={styles.eventContent}>
-        <Text style={styles.eventDate}>Date: {item.date}</Text>
-        <Text style={styles.eventLocation}>Location: {item.location}</Text>
-        <Text style={styles.eventDescription}>Description: {item.description}</Text>
-      </View>
-    </View>
-  );
-
+export default function Timeline({ navigation }) {
   return (
     <ImageBackground 
+
       style={styles.background}
     >
-      <Text style={styles.title}>The Lord of The Rings Timeline</Text>
-      <FlatList
-        data={timelineData}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={renderItem}
-        contentContainerStyle={styles.timelineList}
-      />
+      <View style={styles.container}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('DaysBeforeDays')}>
+          <Text style={styles.buttonText}>Days Before Days</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('YearsOfTheTree')}>
+          <Text style={styles.buttonText}>Years of the Trees</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('FirstAge')}>
+          <Text style={styles.buttonText}>First Age</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('SecondAge')}>
+          <Text style={styles.buttonText}>Second Age</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ThirdAge')}>
+          <Text style={styles.buttonText}>Third Age</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('FourthAge')}>
+          <Text style={styles.buttonText}>Fourth Age</Text>
+        </TouchableOpacity>
+      </View>
     </ImageBackground>
   );
 }
 
-const { height } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    padding: 16,
-  },
-  title: {
-    fontSize: 24,
-    color: '#FFD700',
-    textAlign: 'center',
-    marginVertical: 20,
-  },
-  timelineList: {
-    paddingVertical: 20,
-  },
-  eventContainer: {
-    flexDirection: 'row',
-    marginBottom: 20,
-    alignItems: 'flex-start',
-  },
-  timeline: {
+    justifyContent: 'center',
     alignItems: 'center',
   },
-  timelineMarker: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    backgroundColor: '#FFD700',
-    zIndex: 1,
-  },
-  timelineLine: {
-    width: 2,
-    height: height * 0.15, // Adjust the height based on your preference
-    backgroundColor: '#FFD700',
-    position: 'absolute',
-    top: 10,
-    zIndex: 0,
-  },
-  eventContent: {
-    backgroundColor: '#4B4B4B',
-    borderRadius: 10,
-    padding: 15,
+  container: {
     flex: 1,
-    marginLeft: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '80%', // Ensure the container has a fixed width
   },
-  eventDate: {
-    color: '#FFD700',
-    fontSize: 16,
-    marginBottom: 5,
+  button: {
+    backgroundColor: 'rgba(255, 215, 0, 0.7)', // Golden color with opacity
+    padding: 15,
+    marginVertical: 10,
+    borderRadius: 25,
+    width: '100%', // Ensure all buttons have the same width as the container
+    alignItems: 'center',
   },
-  eventLocation: {
-    color: '#FFD700',
-    fontSize: 16,
-    marginBottom: 5,
-  },
-  eventDescription: {
-    color: '#FFFFFF',
-    fontSize: 14,
+  buttonText: {
+    color: '#000',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
