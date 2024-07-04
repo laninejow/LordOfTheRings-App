@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, FlatList, ImageBackground } from 'react-native';
 import axios from 'axios';
 
 export default function Timeline() {
@@ -7,7 +7,7 @@ export default function Timeline() {
 
   useEffect(() => {
     axios.get('https://the-one-api.dev/v2/movie', {
-      headers: { Authorization: 'Bearer TL4ebRRDh0iAP8Hremrc' }
+      headers: { Authorization: 'Bearer TL4ebRRDh0iAP8Hremrc' } 
     }).then(response => {
       setEvents(response.data.docs);
     }).catch(error => {
@@ -15,43 +15,78 @@ export default function Timeline() {
     });
   }, []);
 
+  const renderItem = ({ item }) => (
+    <View style={styles.eventContainer}>
+      <View style={styles.timelineMarker} />
+      <View style={styles.eventContent}>
+        <Text style={styles.eventDate}>Date: {item.date}</Text>
+        <Text style={styles.eventLocation}>Location: {item.location}</Text>
+        <Text style={styles.eventDescription}>Description: {item.description}</Text>
+      </View>
+    </View>
+  );
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Timeline</Text>
+    <ImageBackground 
+      style={styles.background}
+    >
+      <Text style={styles.title}>The Lord of The Rings Timeline</Text>
       <FlatList
         data={events}
         keyExtractor={item => item._id}
-        renderItem={({ item }) => (
-          <View style={styles.item}>
-            <Text style={styles.itemTitle}>{item.name}</Text>
-            <Text style={styles.itemDescription}>{item.runtimeInMinutes} minutes</Text>
-          </View>
-        )}
+        renderItem={renderItem}
+        contentContainerStyle={styles.timeline}
       />
-    </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
     padding: 16,
+    backgroundColor: ' ',
   },
   title: {
     fontSize: 24,
-    marginBottom: 16,
+    color: '#FFD700',
+    textAlign: 'center',
+    marginVertical: 20,
   },
-  item: {
-    padding: 8,
-    marginBottom: 8,
-    backgroundColor: '#f9f9f9',
-    borderRadius: 4,
+  timeline: {
+    paddingVertical: 20,
   },
-  itemTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
+  eventContainer: {
+    flexDirection: 'row',
+    marginBottom: 20,
+    alignItems: 'flex-start',
   },
-  itemDescription: {
+  timelineMarker: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: '#FFD700',
+    marginRight: 20,
+    marginTop: 10,
+  },
+  eventContent: {
+    backgroundColor: '#4B4B4B',
+    borderRadius: 10,
+    padding: 15,
+    flex: 1,
+  },
+  eventDate: {
+    color: '#FFD700',
     fontSize: 16,
+    marginBottom: 5,
+  },
+  eventLocation: {
+    color: '#FFD700',
+    fontSize: 16,
+    marginBottom: 5,
+  },
+  eventDescription: {
+    color: '#FFFFFF',
+    fontSize: 14,
   },
 });
