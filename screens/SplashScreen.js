@@ -1,30 +1,53 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, Image } from 'react-native';
 
 export default function SplashScreen({ navigation }) {
   useEffect(() => {
     setTimeout(() => {
       navigation.replace('Login');
-    }, 2000);
+    }, 6000);
   }, [navigation]);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Lord of The Rings App</Text>
-    </View>
+    <ImageBackground 
+      style={styles.background}
+    >
+      <View style={styles.container}>
+        <Image source={require('../assets/ss-logo.png')} style={styles.logo} />
+      </View>
+      <Image source={require('../assets/ss-icon.png')} style={styles.icon} />
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#262222',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#000',
+  },
+  logo: {
+    width: 500, 
+    height: 150, 
+    resizeMode: 'contain',
   },
   text: {
     color: '#fff',
     fontSize: 24,
     fontWeight: 'bold',
+    marginTop: 10,
+  },
+  icon: {
+    width: '100%',
+    height: 100, 
+    resizeMode: 'contain',
+    position: 'absolute',
+    bottom: -1,
   },
 });
