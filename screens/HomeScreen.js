@@ -35,13 +35,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    width: '80%',
   },
   button: {
     backgroundColor: 'rgba(255, 215, 0, 0.7)', 
     padding: 15,
     marginVertical: 10,
     borderRadius: 25,
-    width: '50px', 
+    width: '100%', 
     alignItems: 'center',
     
   },

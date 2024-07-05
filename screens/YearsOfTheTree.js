@@ -113,29 +113,164 @@ const timelineData = [
     description: 'Yavanna gives the Noldor the White Tree.',
   },
   {
-    year: '1142',
+    year: '1149',
     era: 'Year of The Trees',
-    description: 'Yavanna gives the Noldor the White Tree.',
+    description: 'Finwë prays to Ulmo to bring the Teleri to Valinor. However, Ossë is grieved to lose the Teleri and persuades some to stay with him in Beleriand. These are called the Falathrim afterwards. Círdan of the Falathrim establishes the havens of Brithombar and Eglarest. Ossë teaches them shipcraft.',
   },
   {
-    year: '1142',
+    year: '1150',
     era: 'Year of The Trees',
-    description: 'Yavanna gives the Noldor the White Tree.',
+    description: 'Olwë and the most part of the Teleri leave Beleriand on Tol Eressëa. The rest of the Teleri remain to search for Elwë and are named the Eglath.',
   },
   {
-    year: '1142',
+    year: '1151',
     era: 'Year of The Trees',
-    description: 'Yavanna gives the Noldor the White Tree.',
+    description: 'Ossë convinces Ulmo to halt Tol Eressëa outside the Bay of Eldamar. The Teleri who choose to remain on the island are afterwards named the Falmari.',
   },
   {
-    year: '1142',
+    year: '1152',
     era: 'Year of The Trees',
-    description: 'Yavanna gives the Noldor the White Tree.',
+    description: 'Elwë and Melian awaken from their trance. Elwë, now silver-haired, becomes the King of the Elves in Beleriand.',
   },
   {
-    year: '1142',
+    year: '1161',
     era: 'Year of The Trees',
-    description: 'Yavanna gives the Noldor the White Tree.',
+    description: 'Ossë teaches the Teleri how to build ships. They leave Tol Eressëa and come to Valinor.',
+  },
+  {
+    year: '1162',
+    era: 'Year of The Trees',
+    description: 'The Teleri found Alqualondë with the help of Finwë.',
+  },
+  {
+    year: '1165',
+    era: 'Year of The Trees',
+    description: 'The Vanyar depart from Tirion to live in Taniquetil with the Valar. The Noldor and Teleri remain in Tirion and the surrounding areas.',
+  },
+  {
+    year: '1169',
+    era: 'Year of The Trees',
+    description: 'Birth of Fëanor, son of Finwë and Míriel. Aulë teaches the Noldor smithying and mining. Rúmil of Tirion makes the Sarati and possibly writes the Ainulindalë.',
+  },
+  {
+    year: '1170',
+    era: 'Year of The Trees',
+    description: 'Death of Míriel Serindë.',
+  },
+  {
+    year: '1182',
+    era: 'Year of The Trees',
+    description: 'The Doom of Manwë is proclaimed. Finwë is allowed to marry again.',
+  },
+  {
+    year: '1185',
+    era: 'Year of The Trees',
+    description: 'Finwë weds Indis of the Vanyar.',
+  },
+  {
+    year: '1190',
+    era: 'Year of The Trees',
+    description: 'Birth of Fingolfin in Valinor.',
+  },
+  {
+    year: '1200',
+    era: 'Year of The Trees',
+    description: 'Second Age of the Chaining of Melkor. Birth of Lúthien in Neldoreth.',
+  },
+  {
+    year: '1230',
+    era: 'Year of The Trees',
+    description: 'Birth of Finarfin in Valinor.',
+  },
+  {
+    year: '1250',
+    era: 'Year of The Trees',
+    description: 'Fëanor creates the Tengwar. Dwarves, known to the Elves as Naugrim, enter Beleriand and meet the Sindar.',
+  },
+  {
+    year: '1250',
+    era: 'Year of The Trees',
+    description: 'Fëanor creates the Tengwar. Dwarves, known to the Elves as Naugrim, enter Beleriand and meet the Sindar.',
+  },
+  {
+    year: '1280',
+    era: 'Year of The Trees',
+    description: 'Finarfin weds Eärwen.',
+  },
+  {
+    year: '1300',
+    era: 'Year of The Trees',
+    description: 'Third Age of the Chaining of Melkor. The births of Turgon and Finrod in Valinor. The Dwarves of Belegost and the Sindar begin the building of Menegroth in Doriath. The Dwarves are paid with knowledge from Melian and with many pearls, including Nimphelos. Daeron creates the Certhas Daeron.',
+  },
+  {
+    year: '1330',
+    era: 'Year of The Trees',
+    description: 'Orcs are first seen in Beleriand. The Dwarves make weapons for the Sindar.',
+  },
+  {
+    year: '1350',
+    era: 'Year of The Trees',
+    description: 'Denethor leads some of the Nandor west into Beleriand and befriends Thingol. They settle in Ossiriand. Daeron betters the Cirth, which are adopted by the Dwarves and made known east of the Blue Mountains.',
+  },
+  {
+    year: '1362',
+    era: 'Year of The Trees',
+    description: 'Births of Galadriel and Aredhel in Valinor.',
+  },
+  {
+    year: '1400',
+    era: 'Year of The Trees',
+    description: 'Melkor is released from bondage.',
+  },
+  {
+    year: '1410',
+    era: 'Year of The Trees',
+    description: 'Melkor befriends the Noldor.',
+  },
+  {
+    year: '1449',
+    era: 'Year of The Trees',
+    description: 'Fëanor, having invented the substance Silima, begins constructing the Silmarils,',
+  },
+  {
+    year: '1450',
+    era: 'Year of The Trees',
+    description: 'Fëanor completes the Silmarils. He puts the Light of the Trees in them and Varda hallows them. For the next 20 years, Melkor begins spreading strife and urging the need for weapons. Fëanor expresses his desire to reject the Valar and return to Middle Earth.',
+  },
+  {
+    year: '1490',
+    era: 'Year of The Trees',
+    description: 'Finwë summons Fëanor to a council meeting, where he threatens Fingolfin with his sword. The Valar then exile Fëanor to Formenos for 12 years. He takes his seven sons and Finwë follows him as well.',
+  },
+  {
+    year: '1492',
+    era: 'Year of The Trees',
+    description: 'Melkor visits Fëanor in Formenos, but he repels him. Finwë then warns the Valar, who pursue Melkor. Melkor flees and finds Ungoliant in Avathar.',
+  },
+  {
+    year: '1495',
+    era: 'Year of The Trees',
+    description: 'Fëanor is summoned by Manwë to Taniquetil where he and Fingolfin reconcile. Ungoliant destroys the Two Trees. Melkor kills Finwë in Formenos and steals the Silmarils. Fëanor names him Morgoth. He and his sons swear the Oath of Fëanor. They begin a rebellion of the Noldor against the Valar and go to Alqualondë where they slay the Teleri and steal their swanships. This begins the Flight of the Noldor. Melkor and Ungoliant flee to Beleriand where Ungoliant threatens him. Melkor calls Balrogs to his aid and they drive Ungoliant away. Melkor, now known as Morgoth, stays in Angband and raises the peaks of Thangorodrim.',
+  },
+  {
+    year: '1496',
+    era: 'Year of The Trees',
+    description: 'Mandos appears before the Noldor and speaks the Doom of Mandos. Finarfin and some of his people repent and return to Valinor. Finrod, son of Finarfin, becomes the leader of his fathers remaining people and they follow Fëanor.',
+  },
+  {
+    year: '1497',
+    era: 'Year of The Trees',
+    description: 'The First Battle of Beleriand. Death of Denethor. Besiegement of the Havens of the Falas. Thingol withdraws his people and Melian sets the Girdle of Melian around Doriath. The Laiquendi become hidden and take no other king. The Noldor arrive at the Helcaraxë. Fëanor and his people betray Fingolfin and sail to Beleriand. Burning of the ships at Losgar. The Dagor-nuin-Giliath ("Battle-under-Stars"). Gothmog mortally wounds Fëanor, who is rescued by his sons before dying near Thangorodrim. Maedhros meets with Morgoth under a false truce and is captured.',
+  },
+  {
+    year: '1498',
+    era: 'Year of The Trees',
+    description: 'Maedhros is chained to the Thangorodrim. The Noldor make a great camp at Mithrim.',
+  },
+  {
+    year: '1500',
+    era: 'Year of The Trees',
+    description: '',
   },
 
 ];
@@ -181,7 +316,7 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#fffff',
+    backgroundColor: '#000',
 
   },
   header: {

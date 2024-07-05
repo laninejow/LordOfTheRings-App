@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+
   },
   container: {
     flex: 1,
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     width: '80%', // Ensure the container has a fixed width
   },
   button: {
-    backgroundColor: 'rgba(255, 215, 0, 0.7)', // Golden color with opacity
+    backgroundColor: 'rgba(255, 215, 0, 0.7)', 
     padding: 15,
     marginVertical: 10,
     borderRadius: 25,
