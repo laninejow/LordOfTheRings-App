@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, FlatList, ImageBackground, Dimensions, TouchableOpacity } from 'react-native';
 
 const timelineData = [
   {
@@ -34,7 +34,7 @@ const timelineData = [
   },
 ];
 
-export default function DayBeforeDays() {
+export default function DayBeforeDays({ navigation }) {
   const renderItem = ({ item, index }) => (
     <View style={styles.eventContainer}>
       <View style={styles.timeline}>
@@ -50,15 +50,22 @@ export default function DayBeforeDays() {
   );
 
   return (
-    <View style={styles.background}>
-      <Text style={styles.title}>Days Before Days Timeline</Text>
+    <ImageBackground 
+      style={styles.background}
+    >
+      <View style={styles.header}>
+        <TouchableOpacity onPress={() => navigation.navigate('Timeline')} style={styles.backButton}>
+          <Text style={styles.backButtonText}>&#x2190;</Text>
+        </TouchableOpacity>
+      <Text style={styles.title}>Third Age</Text>
+      </View>
       <FlatList
         data={timelineData}
         keyExtractor={(item, index) => index.toString()}
         renderItem={renderItem}
         contentContainerStyle={styles.timelineList}
       />
-    </View>
+    </ImageBackground>
   );
 }
 
@@ -68,13 +75,26 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#000', // Set your preferred background color
+    backgroundColor: '#000',
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 20,
+  },
+  backButton: {
+    padding: 10,
+    marginRight: 10,
+  },
+  backButtonText: {
+    fontSize: 24,
+    color: '#FFD700',
   },
   title: {
     fontSize: 24,
     color: '#FFD700',
     textAlign: 'center',
-    marginVertical: 20,
+    flex: 1,
   },
   timelineList: {
     paddingVertical: 20,
@@ -96,7 +116,7 @@ const styles = StyleSheet.create({
   },
   timelineLine: {
     width: 2,
-    height: height * 0.1,
+    height: height * 0.9,
     backgroundColor: '#FFD700',
     position: 'absolute',
     top: 10,

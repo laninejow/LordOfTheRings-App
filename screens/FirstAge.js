@@ -258,6 +258,11 @@ const timelineData = [
     era: 'Years of the Sun',
     description: 'The Fall of Gondolin. Deaths of Turgon, Ecthelion, Glorfindel, Maeglin, and Gothmog.Ereinion Gil-galad becomes High King of the Noldor.',
   },
+  {
+    year: '510',
+    era: 'Years of the Sun',
+    description: 'The Fall of Gondolin. Deaths of Turgon, Ecthelion, Glorfindel, Maeglin, and Gothmog.Ereinion Gil-galad becomes High King of the Noldor.',
+  },
 ];
 
 export default function DayBeforeDays({ navigation }) {
