@@ -4,34 +4,210 @@ import { View, Text, StyleSheet, FlatList, ImageBackground, Dimensions, Touchabl
 const timelineData = [
   {
     year: '1',
-    era: 'Valian Years',
-    description: 'The First War and the Marring of Arda.',
+    era: 'Fourth Age',
+    description: 'The Fourth Age begins in the reckoning of the Shire. Birth of Eldarion, son of King Elessar and Queen Arwen.',
   },
   {
-    year: '1500',
-    era: 'Valian Years',
-    description: 'Tulkas enters Arda and Melkor flees.',
+    year: '2',
+    era: 'Fourth Age',
+    description: 'Death of Adelard Took. Birth of Frodo Gardner.',
   },
   {
-    year: '1900',
-    era: 'Valian Years',
-    description: 'The completion of Arda. The Valar create the Two Lamps and settle at Almaren. Beginning of the Spring of Arda.',
+    year: '4',
+    era: 'Fourth Age',
+    description: 'Birth of Rose Gardner.',
   },
   {
-    year: '3400',
-    era: 'Valian Years',
-    description: 'Tulkas weds Nessa. Melkor secretly returns to Arda, raises the Iron Mountains and delves Utumno. This partially blights the Spring of Arda.',
+    year: '6',
+    era: 'Fourth Age',
+    description: 'Will Whitfoot resigns and Samwise is elected Mayor. Merry Gardner born. Peregrin Took marries Diamond of Long Cleeve. King Elessar issues an edict for the protection of the Shire and Drúadan Forest.',
   },
   {
-    year: '3450',
-    era: 'Valian Years',
-    description: 'Melkor overthrows the Two Lamps, forming the Seas of Helcar and Ringil. Almaren is destroyed. In order to preserve life on the earth, Yavanna sets most living things into a long sleep. End of the Spring of Arda.',
+    year: '7',
+    era: 'Fourth Age',
+    description: 'Death of Gaffer Gamgee.',
   },
   {
-    year: '3500',
-    era: 'Valian Years',
-    description: 'The Valar raise the Pelóri and settle in Aman. The Two Trees are grown in Valinor.',
+    year: '8',
+    era: 'Fourth Age',
+    description: 'Birth of Pippin Gardner.',
   },
+  {
+    year: '9',
+    era: 'Fourth Age',
+    description: 'Birth of Faramir Took I son of Peregrin Took. Deaths of Merimac Brandybuck and Vigo Boffin.',
+  },
+  {
+    year: '10',
+    era: 'Fourth Age',
+    description: 'Birth of Goldilocks Gardner. Death of Odovacar Bolger.',
+  },
+  {
+    year: '11',
+    era: 'Fourth Age',
+    description: 'Death of Saradoc Brandybuck. Meriadoc becomes Master of Buckland. Birth of Hamfast Gardner.',
+  },
+  {
+    year: '12',
+    era: 'Fourth Age',
+    description: 'Birth of Daisy Gardner.',
+  },
+  {
+    year: '13',
+    era: 'Fourth Age',
+    description: 'Death of Paladin Took II. Peregrin Took becomes Thain. Samwise elected Mayor for the second time.',
+  },
+  {
+    year: '14',
+    era: 'Fourth Age',
+    description: 'Death of Olo Proudfoot. Birth of Primrose Gardner.',
+  },
+  {
+    year: '15',
+    era: 'Fourth Age',
+    description: 'King Elessar visits Annúminas and gives gifts. Death of Glóin. Birth of Bilbo Gardner.',
+  },
+  {
+    year: '17',
+    era: 'Fourth Age',
+    description: 'Birth of Ruby Gardner.',
+  },
+  {
+    year: '19',
+    era: 'Fourth Age',
+    description: 'Birth of Robin Gardner. Death of Farmer Cotton.',
+  },
+  {
+    year: '20',
+    era: 'Fourth Age',
+    description: 'Samwise elected Mayor for the third time. Elves return to Ithilien under Legolas.',
+  },
+  {
+    year: '21',
+    era: 'Fourth Age',
+    description: 'Samwise, Rose, and Elanor travel to Gondor. Birth of Tolman Gardner.',
+  },
+  {
+    year: '22',
+    era: 'Fourth Age',
+    description: 'Samwise, Rose, and Elanor depart Gondor. Death of Filibert Bolger.',
+  },
+  {
+    year: '27',
+    era: 'Fourth Age',
+    description: 'Samwise elected Mayor for the fourth time.',
+  },
+  {
+    year: '30',
+    era: 'Fourth Age',
+    description: 'Elanor Gardner weds Fastred of Greenholm. The Westmarch is gifted to the Shire.',
+  },
+  {
+    year: '31',
+    era: 'Fourth Age',
+    description: 'Birth of Elfstan Fairbairn son of Fastred and Elanor.',
+  },
+  {
+    year: '33',
+    era: 'Fourth Age',
+    description: 'Death of Imrahil. Samwise elected Mayor for the fifth time.',
+  },
+  {
+    year: '34',
+    era: 'Fourth Age',
+    description: 'Samwise elected Mayor for the sixth time. Faramir Took I weds Goldilocks Gardner.',
+  },
+  {
+    year: '48',
+    era: 'Fourth Age',
+    description: 'Samwise becomes Mayor for seventh and final time.',
+  },
+  {
+    year: '55',
+    era: 'Fourth Age',
+    description: 'Samwise Gamgee ends his last term as Mayor of Michel Delving.',
+  },
+  {
+    year: '61',
+    era: 'Fourth Age',
+    description: 'Death of Rose Gamgee. Samwise departs Middle-earth.',
+  },
+  {
+    year: '63',
+    era: 'Fourth Age',
+    description: 'Peregrin commissions a copy of the Red Book. Meriadoc and Peregrin depart the Shire.',
+  },
+  {
+    year: '67',
+    era: 'Fourth Age',
+    description: 'Death of Prince Elphir. Alphros becomes Prince of Dol Amroth.',
+  },
+  {
+    year: '80',
+    era: 'Fourth Age',
+    description: 'Birth of Harding Gardner, Samwise Gamgee\'s great-grandson.',
+  },
+  {
+    year: '82',
+    era: 'Fourth Age',
+    description: 'Death of Faramir. Elboron becomes Prince of Ithilien and Steward of the Reunited Kingdom.',
+  },
+  {
+    year: '91',
+    era: 'Fourth Age',
+    description: 'Death of Dwalin.',
+  },
+  {
+    year: '95',
+    era: 'Fourth Age',
+    description: 'Death of Alphros.',
+  },
+  {
+    year: '120',
+    era: 'Fourth Age',
+    description: '1 March: King Elessar dies. It is said that the beds of Meriadoc and Peregrin are set beside the bed of the great king. Eldarion becomes King of the Reunited Kingdom.[5]Legolas builds a grey ship in Ithilien, and with Gimli sails down Anduin and so over the Sea. End in Middle-earth of the Fellowship of the Ring.[5]',
+  },
+  {
+    year: '121',
+    era: 'Fourth Age',
+    description: 'Death of Arwen Undómiel.',
+  },
+  {
+    year: '171',
+    era: 'Fourth Age',
+    description: 'A copy of the Thains Book is completed in Minas Tirith by Findegil, the Kings Writer; probably commissioned by an unnamed great-grandson of Peregrin Took. The copy is sent to the Shire, where it is kept in the library at Great Smials.[18]',
+  },
+  {
+    year: 'After 171',
+    era: 'Fourth Age',
+    description: 'Durin VII is born, grows to adulthood, and retakes Khazad-dûm for the Dwarves of Durins Folk.[10]',
+  },
+  {
+    year: '185',
+    era: 'Fourth Age',
+    description: 'Death of Harding of the Hill.[19]:115',
+  },
+  {
+    year: '210',
+    era: 'Fourth Age',
+    description: 'Possible death date of Borlas\' wife.[20]',
+  },
+  {
+    year: '217',
+    era: 'Fourth Age',
+    description: 'Possible date when Berelach, Beregonds grandson, was given a high command, causing his visits to Pen-arduin to see his father to become short and not very often.[21]',
+  },
+  {
+    year: '220',
+    era: 'Fourth Age',
+    description: 'Possible date for when Herumors dark cult was active in Gondor; [22] the mysterious disappearance of a few Shipmen and a small vessel of the Kings Ships;[22] Berelachs April visit to Pen-arduin;[22]  Borlas later discussion with Saelon about the nature of evil;[22]  the discovery and overthrow of Herumors dark cult.[23] About this time, Eldarions reign as High King comes to an end.[24]',
+  },
+  {
+    year: 'Unknown',
+    era: 'Fourth Age',
+    description: 'Celeborn, Círdan, and any other Elves in Middle-earth who remember the First Age depart the Grey Havens on the Last Ship.[25]',
+  }
+  
 ];
 
 export default function DayBeforeDays({ navigation }) {

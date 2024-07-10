@@ -259,9 +259,59 @@ const timelineData = [
     description: 'The Fall of Gondolin. Deaths of Turgon, Ecthelion, Glorfindel, Maeglin, and Gothmog.Ereinion Gil-galad becomes High King of the Noldor.',
   },
   {
-    year: '510',
+    year: '511',
     era: 'Years of the Sun',
-    description: 'The Fall of Gondolin. Deaths of Turgon, Ecthelion, Glorfindel, Maeglin, and Gothmog.Ereinion Gil-galad becomes High King of the Noldor.',
+    description: 'Gondolin refugees arrive at the Havens of Sirion.',
+  },
+  {
+    year: '512',
+    era: 'Years of the Sun',
+    description: 'Maedhros learns that a Silmaril is at the Havens of Sirion, but forswears the Oath of Fëanor.',
+  },
+  {
+    year: '525',
+    era: 'Years of the Sun',
+    description: 'Eärendil weds Elwing. Tuor and Idril depart for Valinor.',
+  },
+  {
+    year: '532',
+    era: 'Years of the Sun',
+    description: 'Births of Elrond and Elros.',
+  },
+  {
+    year: '534',
+    era: 'Years of the Sun',
+    description: 'Eärendil searches for Valinor.',
+  },
+  {
+    year: '538',
+    era: 'Years of the Sun',
+    description: 'Third Kinslaying at the Havens of Sirion. Deaths of Amrod and Amras. Elrond and Elros are taken captive by Maglor. Elwing escapes with the Silmaril into the Sea. Ulmo gives her the form of a white bird and she reunites with Eärendil aboard Vingilot.',
+  },
+  {
+    year: '540',
+    era: 'Years of the Sun',
+    description: 'Morgoth controls all of Beleriand.',
+  },
+  {
+    year: '542',
+    era: 'Years of the Sun',
+    description: 'Eärendil and Elwing come to Valinor and rally a great host.',
+  },
+  {
+    year: '545',
+    era: 'Years of the Sun',
+    description: 'The Host of Valinor lands in Beleriand.',
+  },
+  {
+    year: '587',
+    era: 'Years of the Sun',
+    description: 'The Destruction of Beleriand. Deaths of Ancalagon and Maedhros. Morgoth is captured.',
+  },
+  {
+    year: '590',
+    era: 'Years of the Sun',
+    description: 'Morgoth is thrust from Arda. The Host of Valinor departs Middle-earth, with the exception of Eönwë.[1] The choice of the Half-elven.[2]',
   },
 ];
 
