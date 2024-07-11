@@ -39,7 +39,7 @@ function MainTabs() {
 
           return <Image source={iconName} style={{ width: size, height: size, tintColor: color }} />;
         },
-        tabBarActiveTintColor: 'tomato',
+        tabBarActiveTintColor: '#8E5D52',
         tabBarInactiveTintColor: 'gray',
       })}
     >
