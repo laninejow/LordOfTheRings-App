@@ -66,6 +66,13 @@ const Timeline = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor:'#8E5D52'
+
+  },
   container: {
     flex: 1,
     backgroundColor: 'black', // Background color of the entire screen
