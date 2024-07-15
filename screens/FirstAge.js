@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, ImageBackground, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Image, ImageBackground, Dimensions, TouchableOpacity } from 'react-native';
+
+const logo = require('../assets/ss-logo.png'); // Replace with your actual logo path
 
 const timelineData = [
   {
@@ -311,8 +313,10 @@ const timelineData = [
   {
     year: '590',
     era: 'Years of the Sun',
-    description: 'Morgoth is thrust from Arda. The Host of Valinor departs Middle-earth, with the exception of Eönwë.[1] The choice of the Half-elven.[2]',
+    description: 'Morgoth is thrust from Arda. The Host of Valinor departs Middle-earth, with the exception of Eönwë. The choice of the Half-elven.',
   },
+  
+  
 ];
 
 export default function DayBeforeDays({ navigation }) {
@@ -331,14 +335,13 @@ export default function DayBeforeDays({ navigation }) {
   );
 
   return (
-    <ImageBackground 
-      style={styles.background}
-    >
-      <View style={styles.header}>
+    <ImageBackground style={styles.background}>
+      <View style={styles.centerContainer}>
+        <Image source={logo} style={styles.logo} />
+        <Text style={styles.title}>First Age</Text>
         <TouchableOpacity onPress={() => navigation.navigate('Timeline')} style={styles.backButton}>
           <Text style={styles.backButtonText}>&#x2190;</Text>
         </TouchableOpacity>
-      <Text style={styles.title}>The First Age</Text>
       </View>
       <FlatList
         data={timelineData}
@@ -356,26 +359,31 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#000',
+    backgroundColor: '#2A1212',
   },
-  header: {
-    flexDirection: 'row',
+  centerContainer: {
     alignItems: 'center',
-    marginVertical: 20,
+    marginTop: 40,
   },
-  backButton: {
-    padding: 10,
-    marginRight: 10,
-  },
-  backButtonText: {
-    fontSize: 24,
-    color: '#FFD700',
+  logo: {
+    width: 350, // Adjust width and height as needed
+    height: 150,
+    marginTop: -10,
   },
   title: {
     fontSize: 24,
-    color: '#FFD700',
-    textAlign: 'center',
-    flex: 1,
+    color: '#FFFF',
+    marginVertical: 20,
+    marginTop: -46,
+  },
+  backButton: {
+    padding: 10,
+    marginTop: -30,
+    marginBottom: 10,
+  },
+  backButtonText: {
+    fontSize: 24,
+    color: '#FFFF',
   },
   timelineList: {
     paddingVertical: 20,
@@ -392,31 +400,31 @@ const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#622626',
     zIndex: 1,
   },
   timelineLine: {
     width: 2,
     height: height * 0.9,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#401818',
     position: 'absolute',
     top: 10,
     zIndex: 0,
   },
   eventContent: {
-    backgroundColor: '#4B4B4B',
+    backgroundColor: '#401818',
     borderRadius: 10,
     padding: 15,
     flex: 1,
     marginLeft: 20,
   },
   eventYear: {
-    color: '#FFD700',
+    color: '#FFFF',
     fontSize: 16,
     marginBottom: 5,
   },
   eventEra: {
-    color: '#FFD700',
+    color: '#FFFF',
     fontSize: 16,
     marginBottom: 5,
   },

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, ImageBackground, Image } from 'react-native';
 import axios from 'axios';
 
 export default function QuoteFinder() {
@@ -17,41 +17,86 @@ export default function QuoteFinder() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Quote Finder</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Character ID"
-        value={character}
-        onChangeText={setCharacter}
-      />
-      <Button title="Find Quote" onPress={fetchQuote} />
-      <Text style={styles.quote}>{quote}</Text>
-    </View>
+    <ImageBackground
+      source={require('../assets/quote-bg.gif')} // Adjust the path as per your background image
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <View style={styles.container}>
+        <Image
+          source={require('../assets/ss-logo.png')} // Adjust the path as per your logo image
+          style={styles.logo}
+          resizeMode="contain"
+        />
+        <Text style={styles.title}>Quote Finder</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Character ID"
+          placeholderTextColor="#ffffff"
+          value={character}
+          onChangeText={setCharacter}
+        />
+        <Button
+          title="Find Quote"
+          onPress={fetchQuote}
+          color="#f5c518" // Yellow background color for the button
+          titleStyle={styles.buttonText} // Custom style for button text
+        />
+        <Text style={styles.quote}>{quote}</Text>
+        <Image
+          source={require('../assets/ring-bg.gif')} // Adjust the path as per your image
+          style={styles.underQuoteImage}
+          resizeMode="contain"
+        />
+      </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+  },
   container: {
     flex: 1,
     padding: 16,
     justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: -70,
+  },
+  logo: {
+    width: 300,
+    height: 150,
   },
   title: {
     fontSize: 24,
+    fontWeight: 'bold',
     marginBottom: 16,
+    color: '#ffffff',
   },
   input: {
-    width: '100%',
-    padding: 8,
-    marginBottom: 8,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 4,
+    width: '80%',
+    height: 40,
+    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+    marginBottom: 12,
+    paddingHorizontal: 10,
+    borderRadius: 8,
+    color: '#ffffff',
   },
   quote: {
-    marginTop: 16,
     fontSize: 18,
-    fontStyle: 'italic',
+    color: '#ffffff',
+    marginTop: 20,
+    textAlign: 'center',
+  },
+  buttonText: {
+    color: '#000000',
+  },
+  underQuoteImage: {
+    width: 200, // Adjust width as needed
+    height: 100, // Adjust height as needed
+    marginTop: 20, // Adjust spacing from quote text
   },
 });

@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, ImageBackground, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, FlatList, ImageBackground, Dimensions, TouchableOpacity, Image } from 'react-native';
+
+const logo = require('../assets/ss-logo.png'); // Replace with your actual logo path
 
 const timelineData = [
   {
@@ -50,7 +52,7 @@ const timelineData = [
   {
     year: '300',
     era: 'Second Age',
-    description: 'Probable birth of Celebrían, daughter of Galadriel and Celeborn.[1]',
+    description: 'Probable birth of Celebrían, daughter of Galadriel and Celeborn.',
   },
   {
     year: '350',
@@ -475,7 +477,7 @@ const timelineData = [
   {
     year: '1605',
     era: 'Second Age',
-    description: 'Sauron begins to gather and prepare armies in the East to invade Eriador, but this is opposed by the two Wizards[2] in the East.[3]',
+    description: 'Sauron begins to gather and prepare armies in the East to invade Eriador, but this is opposed by the two Wizards in the East.',
   },
   {
     year: '1634',
@@ -825,14 +827,13 @@ export default function DayBeforeDays({ navigation }) {
   );
 
   return (
-    <ImageBackground 
-      style={styles.background}
-    >
-      <View style={styles.header}>
+    <ImageBackground style={styles.background}>
+      <View style={styles.centerContainer}>
+        <Image source={logo} style={styles.logo} />
+        <Text style={styles.title}>Second Age</Text>
         <TouchableOpacity onPress={() => navigation.navigate('Timeline')} style={styles.backButton}>
           <Text style={styles.backButtonText}>&#x2190;</Text>
         </TouchableOpacity>
-      <Text style={styles.title}>Second Age</Text>
       </View>
       <FlatList
         data={timelineData}
@@ -850,26 +851,31 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#000',
+    backgroundColor: '#151925',
   },
-  header: {
-    flexDirection: 'row',
+  centerContainer: {
     alignItems: 'center',
-    marginVertical: 20,
+    marginTop: 40,
   },
-  backButton: {
-    padding: 10,
-    marginRight: 10,
-  },
-  backButtonText: {
-    fontSize: 24,
-    color: '#FFD700',
+  logo: {
+    width: 350, // Adjust width and height as needed
+    height: 150,
+    marginTop: -10,
   },
   title: {
     fontSize: 24,
-    color: '#FFD700',
-    textAlign: 'center',
-    flex: 1,
+    color: '#FFFF',
+    marginVertical: 20,
+    marginTop: -46,
+  },
+  backButton: {
+    padding: 10,
+    marginTop: -30,
+    marginBottom: 10,
+  },
+  backButtonText: {
+    fontSize: 24,
+    color: '#FFFF',
   },
   timelineList: {
     paddingVertical: 20,
@@ -886,31 +892,32 @@ const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#1C395B',
     zIndex: 1,
   },
   timelineLine: {
     width: 2,
     height: height * 0.9,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#142942',
     position: 'absolute',
     top: 10,
     zIndex: 0,
   },
   eventContent: {
-    backgroundColor: '#4B4B4B',
+    backgroundColor: '#1C395A',
     borderRadius: 10,
     padding: 15,
     flex: 1,
     marginLeft: 20,
+    opacity: 0.80, // Adjust the opacity value as needed
   },
   eventYear: {
-    color: '#FFD700',
+    color: '#FFFF',
     fontSize: 16,
     marginBottom: 5,
   },
   eventEra: {
-    color: '#FFD700',
+    color: '#FFFF',
     fontSize: 16,
     marginBottom: 5,
   },

@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, ImageBackground, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, FlatList, ImageBackground, Dimensions, TouchableOpacity, Image } from 'react-native';
+
+const logo = require('../assets/ss-logo.png'); // Replace with your actual logo path
 
 const timelineData = [
   {
@@ -165,7 +167,7 @@ const timelineData = [
   {
     year: '120',
     era: 'Fourth Age',
-    description: '1 March: King Elessar dies. It is said that the beds of Meriadoc and Peregrin are set beside the bed of the great king. Eldarion becomes King of the Reunited Kingdom.[5]Legolas builds a grey ship in Ithilien, and with Gimli sails down Anduin and so over the Sea. End in Middle-earth of the Fellowship of the Ring.[5]',
+    description: '1 March: King Elessar dies. It is said that the beds of Meriadoc and Peregrin are set beside the bed of the great king. Eldarion becomes King of the Reunited Kingdom. Legolas builds a grey ship in Ithilien, and with Gimli sails down Anduin and so over the Sea. End in Middle-earth of the Fellowship of the Ring.',
   },
   {
     year: '121',
@@ -175,37 +177,37 @@ const timelineData = [
   {
     year: '171',
     era: 'Fourth Age',
-    description: 'A copy of the Thains Book is completed in Minas Tirith by Findegil, the Kings Writer; probably commissioned by an unnamed great-grandson of Peregrin Took. The copy is sent to the Shire, where it is kept in the library at Great Smials.[18]',
+    description: 'A copy of the Thains Book is completed in Minas Tirith by Findegil, the Kings Writer; probably commissioned by an unnamed great-grandson of Peregrin Took. The copy is sent to the Shire, where it is kept in the library at Great Smials.',
   },
   {
     year: 'After 171',
     era: 'Fourth Age',
-    description: 'Durin VII is born, grows to adulthood, and retakes Khazad-dûm for the Dwarves of Durins Folk.[10]',
+    description: 'Durin VII is born, grows to adulthood, and retakes Khazad-dûm for the Dwarves of Durins Folk.',
   },
   {
     year: '185',
     era: 'Fourth Age',
-    description: 'Death of Harding of the Hill.[19]:115',
+    description: 'Death of Harding of the Hill.',
   },
   {
     year: '210',
     era: 'Fourth Age',
-    description: 'Possible death date of Borlas\' wife.[20]',
+    description: 'Possible death date of Borlas\' wife.',
   },
   {
     year: '217',
     era: 'Fourth Age',
-    description: 'Possible date when Berelach, Beregonds grandson, was given a high command, causing his visits to Pen-arduin to see his father to become short and not very often.[21]',
+    description: 'Possible date when Berelach, Beregonds grandson, was given a high command, causing his visits to Pen-arduin to see his father to become short and not very often.',
   },
   {
     year: '220',
     era: 'Fourth Age',
-    description: 'Possible date for when Herumors dark cult was active in Gondor; [22] the mysterious disappearance of a few Shipmen and a small vessel of the Kings Ships;[22] Berelachs April visit to Pen-arduin;[22]  Borlas later discussion with Saelon about the nature of evil;[22]  the discovery and overthrow of Herumors dark cult.[23] About this time, Eldarions reign as High King comes to an end.[24]',
+    description: 'Possible date for when Herumors dark cult was active in Gondor; the mysterious disappearance of a few Shipmen and a small vessel of the Kings Ships; Berelachs April visit to Pen-arduin;  Borlas later discussion with Saelon about the nature of evil; the discovery and overthrow of Herumors dark cult. About this time, Eldarions reign as High King comes to an end.',
   },
   {
     year: 'Unknown',
     era: 'Fourth Age',
-    description: 'Celeborn, Círdan, and any other Elves in Middle-earth who remember the First Age depart the Grey Havens on the Last Ship.[25]',
+    description: 'Celeborn, Círdan, and any other Elves in Middle-earth who remember the First Age depart the Grey Havens on the Last Ship.',
   }
   
 ];
@@ -226,14 +228,13 @@ export default function DayBeforeDays({ navigation }) {
   );
 
   return (
-    <ImageBackground 
-      style={styles.background}
-    >
-      <View style={styles.header}>
+    <ImageBackground style={styles.background}>
+      <View style={styles.centerContainer}>
+        <Image source={logo} style={styles.logo} />
+        <Text style={styles.title}>Fourth Age</Text>
         <TouchableOpacity onPress={() => navigation.navigate('Timeline')} style={styles.backButton}>
           <Text style={styles.backButtonText}>&#x2190;</Text>
         </TouchableOpacity>
-      <Text style={styles.title}>Fourth Age</Text>
       </View>
       <FlatList
         data={timelineData}
@@ -251,26 +252,31 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#000',
+    backgroundColor: '#251F1F',
   },
-  header: {
-    flexDirection: 'row',
+  centerContainer: {
     alignItems: 'center',
-    marginVertical: 20,
+    marginTop: 40,
   },
-  backButton: {
-    padding: 10,
-    marginRight: 10,
-  },
-  backButtonText: {
-    fontSize: 24,
-    color: '#FFD700',
+  logo: {
+    width: 350, // Adjust width and height as needed
+    height: 150,
+    marginTop: -10,
   },
   title: {
     fontSize: 24,
-    color: '#FFD700',
-    textAlign: 'center',
-    flex: 1,
+    color: '#FFFF',
+    marginVertical: 20,
+    marginTop: -46,
+  },
+  backButton: {
+    padding: 10,
+    marginTop: -30,
+    marginBottom: 10,
+  },
+  backButtonText: {
+    fontSize: 24,
+    color: '#FFFF',
   },
   timelineList: {
     paddingVertical: 20,
@@ -287,31 +293,32 @@ const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#584443',
     zIndex: 1,
   },
   timelineLine: {
     width: 2,
     height: height * 0.9,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#3C312F',
     position: 'absolute',
     top: 10,
     zIndex: 0,
   },
   eventContent: {
-    backgroundColor: '#4B4B4B',
+    backgroundColor: '#584443',
     borderRadius: 10,
     padding: 15,
     flex: 1,
     marginLeft: 20,
+    opacity: 0.8, // Adjust the opacity value as needed
   },
   eventYear: {
-    color: '#FFD700',
+    color: '#FFFF',
     fontSize: 16,
     marginBottom: 5,
   },
   eventEra: {
-    color: '#FFD700',
+    color: '#FFFF',
     fontSize: 16,
     marginBottom: 5,
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, ImageBackground, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, FlatList, ImageBackground, Dimensions, TouchableOpacity, Image } from 'react-native';
 
 const timelineData = [
   {
@@ -53,12 +53,13 @@ export default function DayBeforeDays({ navigation }) {
     <ImageBackground 
       style={styles.background}
     >
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.navigate('Timeline')} style={styles.backButton}>
-          <Text style={styles.backButtonText}>&#x2190;</Text>
-        </TouchableOpacity>
-      <Text style={styles.title}>Days Before Days</Text>
+      <View style={styles.logoContainer}>
+        <Image source={require('../assets/ss-logo.png')} style={styles.logo} />
       </View>
+      <Text style={styles.title}>Days Before Days</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Timeline')} style={styles.backButton}>
+        <Text style={styles.backButtonText}>&#x2190;</Text>
+      </TouchableOpacity>
       <FlatList
         data={timelineData}
         keyExtractor={(item, index) => index.toString()}
@@ -77,24 +78,29 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: '#000',
   },
-  header: {
-    flexDirection: 'row',
+  logoContainer: {
     alignItems: 'center',
-    marginVertical: 20,
+    marginTop: 20,
   },
-  backButton: {
-    padding: 10,
-    marginRight: 10,
-  },
-  backButtonText: {
-    fontSize: 24,
-    color: '#FFD700',
+  logo: {
+    width: 350,
+    height: 150,
+    resizeMode: 'contain',
   },
   title: {
     fontSize: 24,
-    color: '#FFD700',
+    color: '#FFFF',
     textAlign: 'center',
-    flex: 1,
+    marginTop: -50,
+  },
+  backButton: {
+    alignSelf: 'center',
+    marginTop: 4,
+    padding: 10,
+  },
+  backButtonText: {
+    fontSize: 24,
+    color: '#FFFF',
   },
   timelineList: {
     paddingVertical: 20,
@@ -111,33 +117,35 @@ const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#3A3838',
     zIndex: 1,
   },
   timelineLine: {
     width: 2,
     height: height * 0.9,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#3A3838',
     position: 'absolute',
     top: 10,
     zIndex: 0,
   },
   eventContent: {
-    backgroundColor: '#4B4B4B',
+    backgroundColor: 'rgba(75, 75, 75, 0.2)', // Adjust opacity as needed
     borderRadius: 10,
     padding: 15,
     flex: 1,
     marginLeft: 20,
   },
   eventYear: {
-    color: '#FFD700',
+    color: '#FFFF',
     fontSize: 16,
     marginBottom: 5,
+    fontWeight: 'bold', // Make year font bold
   },
   eventEra: {
-    color: '#FFD700',
+    color: '#FFFF',
     fontSize: 16,
     marginBottom: 5,
+    fontWeight: 'bold', // Make era font bold
   },
   eventDescription: {
     color: '#cbcbcb',

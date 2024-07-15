@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, ImageBackground, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, FlatList, ImageBackground, Dimensions, TouchableOpacity, Image } from 'react-native';
+
+const logo = require('../assets/ss-logo.png'); 
 
 const timelineData = [
   {
@@ -275,7 +277,7 @@ const timelineData = [
 
 ];
 
-export default function DayBeforeDays({ navigation }) {
+const DayBeforeDays = ({ navigation }) => {
   const renderItem = ({ item, index }) => (
     <View style={styles.eventContainer}>
       <View style={styles.timeline}>
@@ -294,11 +296,16 @@ export default function DayBeforeDays({ navigation }) {
     <ImageBackground 
       style={styles.background}
     >
-      <View style={styles.header}>
+      <View style={styles.logoContainer}>
+        <Image source={logo} style={styles.logo} />
+      </View>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>Years of The Trees</Text>
+      </View>
+      <View style={styles.arrowContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('Timeline')} style={styles.backButton}>
-          <Text style={styles.backButtonText}>&#x2190;</Text>
+          <Text style={styles.arrow}>&#x2190;</Text>
         </TouchableOpacity>
-      <Text style={styles.title}>Year of The Trees</Text>
       </View>
       <FlatList
         data={timelineData}
@@ -308,7 +315,7 @@ export default function DayBeforeDays({ navigation }) {
       />
     </ImageBackground>
   );
-}
+};
 
 const { height } = Dimensions.get('window');
 
@@ -316,27 +323,37 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#000',
-
+    backgroundColor: '#515037',
   },
-  header: {
-    flexDirection: 'row',
+  logoContainer: {
     alignItems: 'center',
-    marginVertical: 20,
+    marginTop: 40,
   },
-  backButton: {
-    padding: 10,
-    marginRight: 10,
+  logo: {
+    width: 350, 
+    height: 150,
+    marginTop: -10,
   },
-  backButtonText: {
-    fontSize: 24,
-    color: '#FFD700',
+  titleContainer: {
+    alignItems: 'center',
+    marginTop: 20,
   },
   title: {
     fontSize: 24,
-    color: '#FFD700',
-    textAlign: 'center',
-    flex: 1,
+    color: '#FFFF',
+    marginTop: -66,
+  },
+  arrowContainer: {
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  backButton: {
+    padding: 10,
+    marginTop: -50,
+  },
+  arrow: {
+    fontSize: 24,
+    color: '#FFFF',
   },
   timelineList: {
     paddingVertical: 20,
@@ -353,36 +370,39 @@ const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#8F8E60',
     zIndex: 1,
   },
   timelineLine: {
     width: 2,
     height: height * 0.9,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#6A6A50',
     position: 'absolute',
     top: 10,
     zIndex: 0,
   },
   eventContent: {
-    backgroundColor: '#4B4B4B',
+    backgroundColor: '#8F8E60',
     borderRadius: 10,
     padding: 15,
     flex: 1,
     marginLeft: 20,
+    opacity: 0.85,
   },
   eventYear: {
-    color: '#FFD700',
+    color: '#FFFF',
     fontSize: 16,
     marginBottom: 5,
   },
   eventEra: {
-    color: '#FFD700',
+    color: '#FFFF',
     fontSize: 16,
     marginBottom: 5,
   },
   eventDescription: {
-    color: '#cbcbcb',
+    color: '#F7F5F5',
     fontSize: 14,
   },
 });
+
+export default DayBeforeDays;
