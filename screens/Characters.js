@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, FlatList, ActivityIndicator, Image } from 'react-native';
+import { View, Text, StyleSheet, FlatList, ActivityIndicator, Image, TouchableOpacity, Alert } from 'react-native';
 import axios from 'axios';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default function Characters() {
+export default function Characters({ navigation }) {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     axios.get('https://the-one-api.dev/v2/character', {
-      headers: { Authorization: 'Bearer TL4ebRRDh0iAP8Hremrc' } 
+      headers: { Authorization: 'Bearer TL4ebRRDh0iAP8Hremrc' }
     }).then(response => {
       setCharacters(response.data.docs);
       setLoading(false);
@@ -18,10 +20,31 @@ export default function Characters() {
     });
   }, []);
 
+  const handleFavorite = (character) => {
+    Alert.alert(
+      "Add to Favorites",
+      "Do you want to add this character to your favorites?",
+      [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel"
+        },
+        { text: "OK", onPress: () => {
+            setFavorites((prevFavorites) => [...prevFavorites, character]);
+            Alert.alert("Added to Favorites", `${character.name} has been added to your favorites.`);
+          }
+        }
+      ]
+    );
+  };
+
   const renderCharacterItem = ({ item }) => (
     <View style={styles.card}>
       <Text style={styles.item}>{item.name}</Text>
-      <Text style={styles.description}>{item.description}</Text>
+      <TouchableOpacity onPress={() => handleFavorite(item)}>
+        <Icon name="heart" size={24} color="#FFD700" />
+      </TouchableOpacity>
     </View>
   );
 
@@ -29,7 +52,7 @@ export default function Characters() {
     <View style={styles.container}>
       <View style={styles.logoContainer}>
         <Image
-          source={require('../assets/ss-logo.png')} // Adjust the path as per your logo image
+          source={require('../assets/ss-logo.png')}
           style={styles.logo}
           resizeMode="contain"
         />
@@ -46,6 +69,9 @@ export default function Characters() {
             contentContainerStyle={styles.flatListContent}
           />
         )}
+        <TouchableOpacity onPress={() => navigation.navigate('Favorites', { favorites })} style={styles.favoritesButton}>
+          <Text style={styles.favoritesButtonText}>Go to Favorites</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -86,12 +112,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
     borderRadius: 8,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   item: {
     fontSize: 18,
     color: '#ffffff',
-    textAlign: 'center',
-    fontWeight: '200', // Adjusted fontWeight to 'normal'
+    fontWeight: '200',
+    textAlign: 'left',
+    flex: 1,
   },
   description: {
     fontSize: 14,
@@ -100,5 +130,16 @@ const styles = StyleSheet.create({
   },
   flatListContent: {
     paddingBottom: 16,
+  },
+  favoritesButton: {
+    backgroundColor: '#FFD700',
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  favoritesButtonText: {
+    color: '#000000',
+    fontSize: 18,
   },
 });

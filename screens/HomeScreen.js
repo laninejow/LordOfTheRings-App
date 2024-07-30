@@ -255,6 +255,7 @@ const styles = StyleSheet.create({
   exploreText: {
     color: '#cbcbcb',
     fontSize: 16,
+    paddingLeft: 3,
     textAlign: 'left', // Align text to the left
   },
   featureHeaderContainer: {

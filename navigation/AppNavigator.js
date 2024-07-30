@@ -16,6 +16,8 @@ import FourthAge from '../screens/FourthAge';
 import Login from '../screens/Login';
 import Signup from '../screens/Signup';
 import SplashScreen from '../screens/SplashScreen';
+import CharacterDetails from '../screens/CharacterDetails';
+import Favorites from '../screens/Favorites';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -81,6 +83,8 @@ export default function AppNavigator() {
         <Stack.Screen name="SecondAge" component={SecondAge} options={{ headerShown: false }} />
         <Stack.Screen name="ThirdAge" component={ThirdAge} options={{ headerShown: false }} />
         <Stack.Screen name="FourthAge" component={FourthAge} options={{ headerShown: false }} />
+        <Stack.Screen name="CharacterDetails" component={CharacterDetails} options={{ headerShown: false }} />
+        <Stack.Screen name="Favorites" component={Favorites} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
